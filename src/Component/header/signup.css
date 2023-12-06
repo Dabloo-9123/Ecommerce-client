@@ -1,0 +1,31 @@
+.signup_main{
+    /* border: solid 2px teal; */
+    text-align: center;
+    width: 30vw;
+    margin: auto;
+    margin-top: 5vh;
+    box-sizing: border-box;
+    padding: 2vw;
+    /* background-color: rgb(162, 235, 235); */
+    box-shadow: 0px 0px 10px;
+    border-radius: .7vw;
+    
+}
+input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 95%;
+    border: none;
+    border: solid 2px teal;
+    padding: 0.5vw;
+    border-radius: .7vw;
+}
+.register-text{
+    color: teal;
+}
+.signup_button{
+margin-top: 10px;
+width: 40%;
+background-color: teal;
+padding: 0vw;
+}

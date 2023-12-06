@@ -1,0 +1,24 @@
+.login_main{
+    width: 30vw;
+    border: solid 1px teal;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px;
+    /* background-color: rgb(162, 235, 235); */
+}
+input{width: 50%;}
+
+.signin_button{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    background-color: teal;
+    margin-top: 1.5vw;
+    border-color:rgb(197, 188, 189);
+}
+.login_heading{
+    color: teal;
+}

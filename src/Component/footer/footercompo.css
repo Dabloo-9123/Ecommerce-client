@@ -1,0 +1,12 @@
+h2{
+    /* color: teal; */
+}
+.footer_main{
+    width: 100%;
+    background-color:teal;
+    /* border: solid 1px red; */
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+}
