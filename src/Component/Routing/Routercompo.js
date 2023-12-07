@@ -10,6 +10,7 @@ import All from '../body/All'
 
 import '../header/navbar.css'
 import Headphones from '../body/Headphones'
+import SingleCart from '../singlecard/SingleCart'
 
 function Routercompo() {
   return (
@@ -35,6 +36,8 @@ function Routercompo() {
         <Route path='/headphones' element={<Headphones/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/signup' element={<Signup/>} />
+        <Route path='/:product/:id' element={<SingleCart/>} />
+        {/* <Route path='*' element={<Signup/>} /> */}
      </Routes>
      
 

@@ -25,7 +25,7 @@ function Home() {
              return(
             <>
               <div className='cart'>
-              <img src={data.image_} alt='image not found'/>
+              <img src={data.img} alt='home'/>
               <p className='product_name'>{data.name.slice(0,30)}</p>
              <div className='cart-bottom'>
              <p>Price ${data.price}</p>

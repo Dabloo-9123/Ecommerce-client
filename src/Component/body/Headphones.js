@@ -24,7 +24,7 @@ function Headphones() {
              return(
             <>
               <div className='cart'>
-              <img src={item.image_} alt='image not found'/>
+              <img src={item.img} alt='headphones'/>
               <p>{item.name.slice(0,50)}</p>
              <div className='cart-bottom'>
              <p>Price ${item.price}</p>

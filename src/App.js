@@ -66,14 +66,12 @@ export default App;
 // import React, { useReducer } from 'react';
 // import Product from './Component/body/Productcompo';
 // import Cart from './Component/body/Cart';
+// import Data from './Component/body/Data';
+
 
 
 // const initialState = {
-//   products: [
-//     { id: 1, name: 'Product 1', price: 20, quantity: 0 },
-//     { id: 2, name: 'Product 2', price: 30, quantity: 0 },
-//     // Add more products
-//   ],
+//   products:Data,
 //   cart: [],
 // };
 
