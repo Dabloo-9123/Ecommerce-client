@@ -18,10 +18,10 @@ function Home() {
   return (
     <>
     <ImageSlider/>
-    <h3 className='bestseller_text'>Best seller</h3>
+    <h3 className='bestseller_text'>Best Seller</h3>
     <div className='parent'>
            
-       { data && data.filter((item)=>item.id<8).map((data)=>{
+       { data && data.filter((item)=>item.rating==5).map((data)=>{
              return(
             <>
               <div className='cart'>
@@ -47,6 +47,31 @@ function Home() {
 
       </video>
     </div>
+   
+    <h3 className='bestseller_text'>Top Sold Product</h3>
+    <div className='parent'>
+           
+           { data && data.filter((item)=>item.rating==4).map((data)=>{
+                 return(
+                <>
+                  <div className='cart'>
+                  <img src={data.img} alt='home'/>
+                  <p className='product_name'>{data.name.slice(0,30)}</p>
+                 <div className='cart-bottom'>
+                 <p>Price ${data.price}</p>
+                  <button >Add to cart</button>
+                 </div>
+            
+                  </div>
+    
+    
+                  
+                  </>
+                 
+                  
+                 )
+             })}
+        </div>
     </>
   )
 }

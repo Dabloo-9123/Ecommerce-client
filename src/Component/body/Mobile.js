@@ -1,10 +1,14 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom'
+import { AddCart } from '../../redux/cartSystem';
+
 
 function Mobile() {
   const[data,setdata]=useState('');
   const [Loader,setLoader]=useState(true)
+  const dispatch = useDispatch()
 
   useEffect(()=>{
      axios.get('https://ecommerce-server-r7xn.onrender.com/api/data')
@@ -25,16 +29,20 @@ function Mobile() {
            { data && data.filter((item)=>item.catergory==='mobile').map((item)=>{
                  return(
                 <>
-                <NavLink to={`/product/${item.id}`} className='cart' >
-                
-                  <img src={item.img} alt='mobile'/>
-                  <p>{item.name.slice(0,50)}</p>
+              
+                <div  className='cart'>
+                <NavLink to={`/product/${item.id}`} >
+                <img src={item.img} alt='mobile'/> </NavLink>
+                  <p>{item.name.slice(0,30)}...</p>
                  <div className='cart-bottom'>
                  <p>Price ${item.price}</p>
-                  <button >Add to cart</button>
+                  <button onClick={()=>dispatch(AddCart(item))}>
+                    Add to cart
+                    </button>
                  </div>
+                </div>
                 
-                 </NavLink>
+                
                   </>
                  
                   

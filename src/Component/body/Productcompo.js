@@ -20,7 +20,6 @@
 
 // export default Productcompo
 
-
 import React from 'react';
 
 const Product = ({ product, dispatch }) => {

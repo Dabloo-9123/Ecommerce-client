@@ -1,8 +1,9 @@
 
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Navbar from './Component/header/Navbar';
 import FooterComp from './Component/footer/FooterComp';
+import { BrowserRouter } from 'react-router-dom';
 
 
 function App() {
@@ -49,10 +50,12 @@ function App() {
 
   return (
   <>
-  <BrowserRouter>
-  <Navbar/>
+ <BrowserRouter>
+ 
+ <Navbar/>
   <FooterComp/>
-  </BrowserRouter>
+ 
+ </BrowserRouter>
  
 
 

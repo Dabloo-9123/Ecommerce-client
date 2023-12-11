@@ -1,13 +1,22 @@
-div a{
+div a {
     text-decoration: none;
     color: white;
     font-weight: 500;
+    font-size: .6rem;
 }
 .nav{
     display: flex;
-    border: solid 1px black;
+    border: solid px rgb(173, 124, 124);
     background-color: teal;
     color: white;
-    justify-content:space-evenly;
+    width: 100%;
+    justify-content:space-around;
     align-items: center;
+    position: fixed;
+    top: 0px;
+}
+input {
+    width: 20%;
+    padding: 0.3rem;
+    font-size: 0.9rem;
 }
