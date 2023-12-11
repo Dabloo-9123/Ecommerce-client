@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { AddCart } from '../../redux/cartSystem';
 
 
+
 function Mobile() {
   const[data,setdata]=useState('');
   const [Loader,setLoader]=useState(true)

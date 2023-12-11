@@ -1,9 +1,10 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import './signup.css'
+import {ToastContainer,toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 function Signup() {
-    
     const[name,setname]=useState('')
     const[email,setemail]=useState('')
     const[password,setpassword]=useState('')
@@ -21,11 +22,11 @@ function Signup() {
    try{
     const response= await axios.post('https://ecommerce-server-r7xn.onrender.com/api/register',tempobj);
     console.log('response :',response.data);
-    alert(response.data)
+   toast.success(`${response.data}`)
    }
    catch(err){
     console.log('error',err);
-    
+     
    }
 // axios.post('https://ecommerce-server-r7xn.onrender.com/', tempobj)
 //   .then(response => {
@@ -59,6 +60,7 @@ function Signup() {
 
         <button className='signup_button' onClick={handleSubmit}>Submit</button>
     </form>
+    <ToastContainer/>
    </div>
     </>
   )
