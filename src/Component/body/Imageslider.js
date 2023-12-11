@@ -18,7 +18,7 @@ function ImageSlider() {
     }, 3000); // Change image every 3 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
-  }, [currentIndex]);
+  },[data.length]);
 
   return (
     <div className="image-slider">
