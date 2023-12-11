@@ -15,7 +15,7 @@ console.log(cart)
     
   return (
     <>
-    <h1>Cart items {cart.length}</h1>
+    <h1 className='cart_head'>Cart items :{cart.length}</h1>
     {
         cart&&cart.map((item)=>{
             return(
@@ -31,7 +31,7 @@ console.log(cart)
             <div className='cart_middle'>
             <p className='item_name'>{item.name.slice(0,50)}</p>
             <p className='item_price'>Price ${item.price}</p>
-            <label onClick={()=>{dispatch(decreaseQuantity(item))}}>-</label>
+            <label onClick={()=>{dispatch(decreaseQuantity(item))} }>-</label>
             <label className='item_price'>{item.quant}</label>
             <label onClick={()=>{dispatch(increaseQuantity(item))}}>+</label>
             </div>

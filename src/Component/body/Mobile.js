@@ -3,13 +3,15 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import { AddCart } from '../../redux/cartSystem';
-
+// import { ToastContainer,toast } from "react-toastify";
+// import 'react-toastify/dist/ReactToastify.css';
 
 
 function Mobile() {
   const[data,setdata]=useState('');
   const [Loader,setLoader]=useState(true)
   const dispatch = useDispatch()
+  // dispatch(toast.success('added succes'))
 
   useEffect(()=>{
      axios.get('https://ecommerce-server-r7xn.onrender.com/api/data')
@@ -50,7 +52,7 @@ function Mobile() {
                  )
              })}
         </div>}
-   
+   {/* <ToastContainer/> */}
     </>
   )
 }

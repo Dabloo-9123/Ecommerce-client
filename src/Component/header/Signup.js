@@ -3,12 +3,15 @@ import React, { useState } from 'react'
 import './signup.css'
 import {ToastContainer,toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
+
 
 function Signup() {
     const[name,setname]=useState('')
     const[email,setemail]=useState('')
     const[password,setpassword]=useState('')
     const[phone,setphone]=useState()
+    const Navi=useNavigate()
     
 
     const handleSubmit= async(e)=>{
@@ -22,7 +25,8 @@ function Signup() {
    try{
     const response= await axios.post('https://ecommerce-server-r7xn.onrender.com/api/register',tempobj);
     console.log('response :',response.data);
-   toast.success(`${response.data}`)
+      toast.success(`${response.data}` , await Navi('/'))
+   
    }
    catch(err){
     console.log('error',err);
@@ -37,7 +41,7 @@ function Signup() {
 //     // Handle error
 //     console.error('Error:', error.message);
 //   });
-   
+    
 
     }
    

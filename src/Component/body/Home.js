@@ -3,6 +3,7 @@ import axios from "axios"
 import './home.css'
 import ImageSlider from './Imageslider'
 
+
 function Home() {
   const[data,setdata]=useState('')
 
@@ -21,7 +22,7 @@ function Home() {
     <h3 className='bestseller_text'>Best Seller</h3>
     <div className='parent'>
            
-       { data && data.filter((item)=>item.rating==5).map((data)=>{
+       { data && data.filter((item)=>Number(item.rating)===5).map((data)=>{
              return(
             <>
               <div className='cart'>
@@ -42,16 +43,21 @@ function Home() {
              )
          })}
     </div>
-    <div className='video_div'>
-      <video>
+    {/* <div className='video_div'>
+      
+    <video width="650" height="360" autoPlay muted loop>
+    <source src='../body/videoad'/>
+    
+</video>
 
-      </video>
-    </div>
+      
+    </div> */}
+<ImageSlider/>
    
     <h3 className='bestseller_text'>Top Sold Product</h3>
     <div className='parent'>
            
-           { data && data.filter((item)=>item.rating==4).map((data)=>{
+           { data && data.filter((item)=>Number(item.rating)===4).map((data)=>{
                  return(
                 <>
                   <div className='cart'>
