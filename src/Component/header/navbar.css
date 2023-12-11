@@ -15,8 +15,16 @@ div a {
     position: fixed;
     top: 0px;
 }
-input {
+.search_item {
     width: 20%;
     padding: 0.3rem;
     font-size: 0.9rem;
+}
+.cart_navbar{
+    /* border: solid 1px red; */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    width: 3rem;
+    margin-right: 1rem;
 }
