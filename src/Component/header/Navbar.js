@@ -5,12 +5,9 @@ import './navbar.css'
 function Navbar() {
   return (
     <>
-   <div>
-    
-   </div>
-  
-  
-    <Routercompo/>
+
+  <Routercompo/>
+
     </>
   )
 }
