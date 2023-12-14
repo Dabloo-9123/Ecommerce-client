@@ -35,7 +35,7 @@ function Home() {
               </NavLink>
               <p className='product_name'>{item.name.slice(0,30)}</p>
              <div className='cart-bottom'>
-             <p>Price ${item.price}</p>
+             <p>Price ₹{item.price}</p>
              <button onClick={()=>dispatch(addToCart({id:item.id,name:item.name,price:Number(item.price),quantity:item.quant,image:item.img}))}>
                     Add to cart
                     </button>
@@ -75,7 +75,7 @@ function Home() {
                   </NavLink>
                   <p className='product_name'>{item.name.slice(0,30)}</p>
                  <div className='cart-bottom'>
-                 <p>Price ${item.price}</p>
+                 <p>Price ₹{item.price}</p>
                  <button onClick={()=>dispatch(addToCart({id:item.id,name:item.name,price:Number(item.price),quantity:item.quant,image:item.img}))}>
                     Add to cart
                     </button>

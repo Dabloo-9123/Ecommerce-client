@@ -3,19 +3,19 @@
     padding: 0px;
     box-sizing: border-box;
 }
-.cart_head{
-    margin-top: 4rem;
+.cart_head {
+    margin-top: 6rem;
     text-align: center;
     border: solid 2 px red;
     color: rgb(191, 188, 188);
     text-decoration: underline;
-    background-color: teal;
+    /* background-color: rgb(36, 229, 229); */
     box-shadow: 0px 0px 5px;
     border-radius: 1rem;
 }
 .cart_box{
     width: 90%;
-    border: solid 2px teal;
+    /* border: solid 2px teal; */
 margin: auto;
 margin-top: 2vw;
 border-radius: .5vw;
@@ -85,16 +85,16 @@ justify-content: space-between;
 }
 .checkout{
     width: 90%;
-    border: solid 3px white;
+    /* border: solid 3px white; */
     /* border-bottom-color: teal; */
     margin: auto;
     padding: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 2px 2px 2px;
+    box-shadow: 0dvi 0px 5px;
     margin-top: 1rem;
-    border-radius: 1rem;
+    border-radius: .5rem;
 }
 .checkout_button{
     width:12rem;
@@ -109,13 +109,65 @@ justify-content: space-between;
 
 
 }
-.shopmore_button{
+.shopmore_button {
     text-align: center;
     background-color: red;
     color: white;
-    font-weight: 300;
-    display:block;
+    font-weight: 600;
+    display: block;
     margin: auto;
     margin-top: 3rem;
     margin-bottom: 2rem;
+    width: 4rem;
+    height: 2rem;
+    font-size: 0.5rem;
 }
+
+/* mediaquery for mobile */
+
+@media only screen and (min-width:250px) and (max-width: 650px){
+    .cart_box {
+        height: 25vw; 
+     }
+     .cart_img {
+         width: 25%;
+     }
+     .cart_buttons {
+         width: 25%;
+        font-size: 6vw;
+     }
+     .cart_buttons button {
+         width: 4rem;
+         font-size: .7rem;
+     }
+     .cart_middle {
+         width: 50%;
+         /* font-size: .9rem; */
+     }
+     .item_name{
+         font-size: .8rem;
+         text-align: left;
+         font-weight:750;
+         color: grey;
+     }
+     .item_price{
+         font-size: .9rem;
+         text-align: left;
+         /* font-weight: 600; */
+     }
+     .checkout_button {
+        width: 8rem;
+        height: 1rem;
+        padding: 1rem;
+        background-color: rgb(25, 243, 116);
+        text-align: center;
+        vertical-align: middle;
+        padding-bottom: 1.5rem;
+        font-size: 1rem;
+        border-color: rgb(0, 128, 75);
+    }
+   }
+   /* mediaquery for Tab */
+   @media only screen and (min-width: 651px) and (max-width: 991px) {
+   
+   }

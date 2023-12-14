@@ -24,3 +24,11 @@ input{width: 50%;}
 .login_heading{
     color: teal;
 }
+/* mediaquery for mobile */
+@media only screen and (max-width: 650px) and (min-width:250px) {
+   
+   }
+   /* mediaquery for tab */
+   @media only screen and (min-width: 651px) and (max-width: 991px) {
+   
+   }
