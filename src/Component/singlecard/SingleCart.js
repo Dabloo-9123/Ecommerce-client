@@ -6,7 +6,6 @@ import axios from 'axios'
 import './singlecard.css'
 
 
-{/* <h1>{data.id}</h1> */}
 
 function SingleCart() {
   const data1=useParams()
