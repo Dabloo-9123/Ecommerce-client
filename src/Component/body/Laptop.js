@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import { addToCart } from '../../redux/cartSystem';
+import FooterComp from '../footer/FooterComp';
+
 
 
 function Laptop() {
@@ -33,7 +35,7 @@ function Laptop() {
                 <div  className='cart'>
                 <NavLink to={`/product/${item.id}`} >
                 <img src={item.img} alt='mobile'/> </NavLink>
-                  <p>{item.name.slice(0,30)}...</p>
+                <p className='product_name'>{item.name.slice(0,30)}</p>
                  <div className='cart-bottom'>
                  <p>Price ₹{item.price}</p>
                  
@@ -43,14 +45,15 @@ function Laptop() {
                  </div>
                 </div>
                 
-                
+              
                   </>
                  
                   
                  )
              })}
+
         </div>}
-   
+     <FooterComp/>
     </>
   )
 }

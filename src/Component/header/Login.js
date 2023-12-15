@@ -4,6 +4,8 @@ import { ToastContainer,toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 import './login.css'
+import FooterComp from "../footer/FooterComp";
+
 
 function Login() {
   const [email, setemail] = useState("");
@@ -53,6 +55,7 @@ function Login() {
       </form>
       <ToastContainer toastStyle={{ color:"teal" }} />
      </div>
+     <FooterComp/>
     </>
   );
 }

@@ -5,6 +5,7 @@ import ImageSlider from './Imageslider'
 import { addToCart } from '../../redux/cartSystem'
 import { NavLink } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+import FooterComp from '../footer/FooterComp'
 
 
 function Home() {
@@ -91,6 +92,7 @@ function Home() {
                  )
              })}
         </div>
+        <FooterComp/>
     </>
   )
 }

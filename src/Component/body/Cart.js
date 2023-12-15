@@ -4,6 +4,8 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { DeleteCart, decreaseQuantity, increaseQuantity } from '../../redux/cartSystem'
 import './cart.css'
 import {loadStripe} from '@stripe/stripe-js';
+import FooterComp from '../footer/FooterComp'
+
 
 
    
@@ -83,6 +85,7 @@ console.log(totalAmount)
       
     </div>
     <button className='shopmore_button' onClick={()=>Navi('/')}>Shop more</button>
+    <FooterComp/>
     </>
   )
 }

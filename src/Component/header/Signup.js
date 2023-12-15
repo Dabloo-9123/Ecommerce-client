@@ -4,6 +4,8 @@ import './signup.css'
 import {ToastContainer,toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import FooterComp from '../footer/FooterComp';
+
 
 
 function Signup() {
@@ -66,6 +68,7 @@ function Signup() {
     </form>
     <ToastContainer/>
    </div>
+   <FooterComp/>
     </>
   )
 }

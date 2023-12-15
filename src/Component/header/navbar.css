@@ -119,5 +119,11 @@ div a.active{
    }
    /* mediaquery for tab */
    @media only screen and (min-width: 651px) and (max-width: 991px) {
-    
+    .nav_bot a:hover {
+       
+        font-size: 2vw;
+    }
+    .nav_bot a {
+        font-size: 1.2rem;
    }
+}

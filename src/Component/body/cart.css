@@ -117,12 +117,15 @@ justify-content: space-between;
     display: block;
     margin: auto;
     margin-top: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 8rem;
     width: 4rem;
     height: 2rem;
     font-size: 0.5rem;
 }
-
+.checkout ~ footer{
+    position: fixed;
+    bottom: 0;
+}
 /* mediaquery for mobile */
 
 @media only screen and (min-width:250px) and (max-width: 650px){
@@ -176,8 +179,18 @@ justify-content: space-between;
         height: 1rem;
         font-size: 1rem;
     }
+    .shopmore_button {
+        /* margin-bottom: 8rem; */
+    }
+    .checkout ~ footer{
+        position: fixed;
+        bottom: 0;
+    }
    }
    /* mediaquery for Tab */
    @media only screen and (min-width: 651px) and (max-width: 991px) {
-   
+    .checkout ~ footer{
+        position: fixed;
+        bottom: 0;
+    }
    }

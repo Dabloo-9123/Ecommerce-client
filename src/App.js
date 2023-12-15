@@ -2,7 +2,7 @@
 // import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Navbar from './Component/header/Navbar';
-import FooterComp from './Component/footer/FooterComp';
+// import FooterComp from './Component/footer/FooterComp';
 import { BrowserRouter } from 'react-router-dom';
 // import { ToastContainer } from 'react-toastify';
 
@@ -14,7 +14,7 @@ function App() {
  <BrowserRouter>
  
  <Navbar/>
-<FooterComp/>
+
  
  </BrowserRouter>
  
