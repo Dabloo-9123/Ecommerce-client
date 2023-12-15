@@ -47,6 +47,7 @@ function Routercompo() {
    </div>
 
     <Routes>
+    <Route path='/sucess' element={<Sucess/>}/>
         <Route path='/' element={<Home></Home>}></Route>
         {/* <Route path='/all' element={<All/>}/> */}
         <Route path='/laptop' element={<Laptop/>}/>
@@ -57,7 +58,7 @@ function Routercompo() {
         <Route path='/signup' element={<Signup/>} />
         <Route path='/:product/:id' element={<SingleCart/>} />
         <Route path='/cart' element={<Cart/>}/>
-        <Route path='/sucess' element={<Sucess/>}/>
+      
         <Route path='/cancel' element={<Cancel/>}/>
 
         {/* <Route path='*' element={<Signup/>} /> */}
