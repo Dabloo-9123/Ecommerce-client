@@ -40,3 +40,28 @@ img{
   width: 150px;
   height: 150px;
 }
+.user_nav{
+  width: 1.5rem;
+  height: 1.5rem;
+  border: solid 1px rebeccapurple;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwaclfFtHZqMKuOD-nFf35LeQSlwL-M67Ow-XyzvmaeS747mSiaqzYWYc6FBUSXQXkuJk&usqp=CAU");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+.user_flow{
+  float: left;
+  background-color:grey;
+  /* display: none; */
+  position: absolute;
+  border-radius: 20%;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+  text-align: center;
+  right: 0;
+  top: 50%;
+  color: black;
+  width: 4rem;
+  height: 5rem;
+}

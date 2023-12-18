@@ -27,8 +27,8 @@ function Signup() {
    try{
     const response= await axios.post('https://ecommerce-server-r7xn.onrender.com/api/register',tempobj);
     console.log('response :',response.data);
-      toast.success(`${response.data}` , await Navi('/'))
-   
+      toast.success(`${response.data.msg}` , Navi('/'))
+      localStorage.setItem("user",JSON.stringify(response))
    }
    catch(err){
     console.log('error',err);
@@ -53,16 +53,16 @@ function Signup() {
    <h2 className='register-text'>Register</h2>
     <form>
         <input type='text' placeholder='Enter name' value={name} 
-        onChange={(e)=>setname(e.target.value)}></input><br></br>
+        onChange={(e)=>setname(e.target.value)} required></input><br></br>
 
         <input type='text' placeholder='Enter Email' value={email}
-         onChange={(e)=>setemail(e.target.value)}></input><br></br>
+         onChange={(e)=>setemail(e.target.value)} required></input><br></br>
 
         <input type='text' placeholder='Enter Password' value={password}
-         onChange={(e)=>setpassword(e.target.value)}></input><br></br>
+         onChange={(e)=>setpassword(e.target.value)} required></input><br></br>
 
         <input type='text' placeholder='Enter Phone' value={phone}
-         onChange={(e)=>setphone(e.target.value)}></input><br></br>
+         onChange={(e)=>setphone(e.target.value)} required></input><br></br>
 
         <button className='signup_button' onClick={handleSubmit}>Submit</button>
     </form>

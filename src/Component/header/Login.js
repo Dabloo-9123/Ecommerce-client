@@ -23,7 +23,13 @@ function Login() {
         tempobj
       );
       console.log("response", response.data);
-      toast.success(`${response.data}`)
+      if(response && response.data.success){
+        toast.success(`${response.data.msg}`)
+      }
+      else{
+        toast.error(`${response.data.msg}`)
+      }
+    
       console.log(response);
     } catch (err) {
       console.log("err", err);
@@ -40,6 +46,7 @@ function Login() {
           placeholder="Enter Email"
           value={email}
           onChange={(e) => setemail(e.target.value)}
+          required
         ></input>
         <br></br>
 
@@ -48,6 +55,7 @@ function Login() {
           placeholder="Enter Password"
           value={password}
           onChange={(e) => setpassword(e.target.value)}
+          required
         ></input>
         <br></br>
 
