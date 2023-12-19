@@ -5,6 +5,7 @@ import { NavLink, useParams } from 'react-router-dom'
 import axios from 'axios'
 import './singlecard.css'
 import { addToCart } from '../../redux/cartSystem'
+import FooterComp from '../footer/FooterComp'
 // import FooterComp from '../footer/FooterComp'
 
 
@@ -95,7 +96,7 @@ function SingleCart() {
          )
      })}
 </div>}
-{/* <FooterComp/> */}
+<FooterComp/>
     </>
   )
 }
