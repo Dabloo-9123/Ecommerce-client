@@ -41,7 +41,8 @@ console.log(totalAmount)
     }
   return (
     <>
-    <h1 className='cart_head'>Cart items :{cart.length}</h1>
+   <div className='cart_parent'>
+   <h1 className='cart_head'>Cart items :{cart.length}</h1>
     {
         cart && cart.map((item)=>{
             return(
@@ -81,11 +82,13 @@ console.log(totalAmount)
     }
     <div className='checkout'>
       <h3>Total Cart Price : ₹{totalAmount}</h3>
-    <button className='checkout_button' onClick={makePayment}>Checkout</button>
+    <button className='checkout_button' onClick={makePayment}>Buy items</button>
       
     </div>
     <button className='shopmore_button' onClick={()=>Navi('/')}>Shop more</button>
-    <FooterComp/>
+   
+   </div>
+   <FooterComp/>
     </>
   )
 }

@@ -1,18 +1,20 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import {  addToCart } from '../../redux/cartSystem';
 import FooterComp from '../footer/FooterComp';
+import { toast } from 'react-toastify';
 
 // import { ToastContainer,toast } from "react-toastify";
 // import 'react-toastify/dist/ReactToastify.css';
 
 
-function Mobile() {
+function Mobile({token}) {
   const[data,setdata]=useState('');
   const [Loader,setLoader]=useState(true)
   const dispatch = useDispatch()
+  const navi=useNavigate()
   // dispatch(toast.success('added succes'))
 
   useEffect(()=>{
@@ -25,6 +27,10 @@ function Mobile() {
      })
   },[])
   console.log(data);
+  const handlebuttton=()=>{
+    toast.success("please sign in first")
+    navi('/login')
+  }
   
   return (
     <>
@@ -41,9 +47,9 @@ function Mobile() {
                 <p className='product_name'>{item.name.slice(0,30)}</p>
                  <div className='cart-bottom'>
                  <p>Price ₹{item.price}</p>
-                 <button onClick={()=>dispatch(addToCart({id:item.id,name:item.name,price:Number(item.price),quantity:item.quant,image:item.img}))}>
+                 {token==='' ? <button onClick={handlebuttton}>Add to Cart</button> : <button onClick={()=>dispatch(addToCart({id:item.id,name:item.name,price:Number(item.price),quantity:item.quant,image:item.img}))}>
                     Add to cart
-                    </button>
+                    </button>}
                  </div>
                 </div>
                 

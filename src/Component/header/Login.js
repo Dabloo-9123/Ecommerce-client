@@ -5,11 +5,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import './login.css'
 import FooterComp from "../footer/FooterComp";
+import { useNavigate } from "react-router-dom";
 
 
-function Login() {
+function Login({ settoken }) {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+  const navi = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,6 +27,14 @@ function Login() {
       console.log("response", response.data);
       if(response && response.data.success){
         toast.success(`${response.data.msg}`)
+        settoken( localStorage.setItem("user",JSON.stringify(response)));
+        navi('/')
+
+      // localStorage.setItem("token",response.token)
+      localStorage.setItem("user",JSON.stringify(response))
+      // var token=localStorage.getItem("user")
+      
+      
       }
       else{
         toast.error(`${response.data.msg}`)
@@ -60,7 +70,9 @@ function Login() {
         <br></br>
 
         <button className="signin_button" onClick={handleSubmit}>Sign In</button>
+        
       </form>
+     
       <ToastContainer toastStyle={{ color:"teal" }} />
      </div>
      <FooterComp/>

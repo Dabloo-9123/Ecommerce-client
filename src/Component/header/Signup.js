@@ -27,8 +27,13 @@ function Signup() {
    try{
     const response= await axios.post('https://ecommerce-server-r7xn.onrender.com/api/register',tempobj);
     console.log('response :',response.data);
-      toast.success(`${response.data.msg}` , Navi('/'))
-      localStorage.setItem("user",JSON.stringify(response))
+    if(response && response.data.success){
+      toast.success(`${response.data.msg}`)
+      Navi('/login')
+    }
+    else{
+      toast.error(`${response.data.msg}`)
+    }
    }
    catch(err){
     console.log('error',err);

@@ -1,15 +1,17 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import {  addToCart } from '../../redux/cartSystem';
 import FooterComp from '../footer/FooterComp';
+import { toast } from 'react-toastify';
 
 
-function Headphones() {
+function Headphones({token}) {
   const[data,setdata]=useState('');
   const [Loader,setLoader]=useState(true)
   const dispatch = useDispatch()
+  const navi=useNavigate()
 
   useEffect(()=>{
      axios.get('https://ecommerce-server-r7xn.onrender.com/api/data')
@@ -20,6 +22,10 @@ function Headphones() {
       setLoader(false)
      })
   },[])
+  const handlebuttton=()=>{
+    toast.success("please sign in first")
+    navi('/login')
+  }
   console.log(data);
   
   return (
@@ -37,9 +43,9 @@ function Headphones() {
                 <p className='product_name'>{item.name.slice(0,30)}</p>
                  <div className='cart-bottom'>
                  <p>Price ₹{item.price}</p>
-                 <button onClick={()=>dispatch(addToCart({id:item.id,name:item.name,price:Number(item.price),quantity:item.quant,image:item.img}))}>
+                 {token==='' ? <button onClick={handlebuttton}>Add to Cart</button> : <button onClick={()=>dispatch(addToCart({id:item.id,name:item.name,price:Number(item.price),quantity:item.quant,image:item.img}))}>
                     Add to cart
-                    </button>
+                    </button>}
                  </div>
                 </div>
                 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {  NavLink, Route, Routes } from 'react-router-dom'
+import {  NavLink, Route, Routes, useNavigate } from 'react-router-dom'
 import Home from '../body/Home'
 import Laptop from '../body/Laptop'
 import Mobile from '../body/Mobile'
@@ -18,13 +18,23 @@ import Cancel from '../body/Cancel'
 import ProductSearch from '../body/SearchCompo'
 
 
+
 function Routercompo() {
+  const navi=useNavigate('/login')
   const [user,setuser]=useState(0)
+  const [token,settoken]=useState(localStorage.getItem('user') || '')
   const {cart}=useSelector(item=>item.user)
   const userToggle=()=>{
   setuser(user+1)
   console.log(user)
-  }
+  // const token=localStorage.getItem("user")
+ }
+ const handleLogout = () => {
+  localStorage.removeItem('token');
+  settoken('');
+  console.log(token)
+  navi('/login')
+};
   return (
    <>
    
@@ -40,9 +50,9 @@ function Routercompo() {
       <div className='search_icon'></div>
       </NavLink></div>
     <div className='user_nav' onClick={userToggle}></div>
-    {user%2===0 ? <div className='user_flow' onClick={userToggle}><div><NavLink to='/login'>Login</NavLink></div><div><NavLink to='/signup' onClick={userToggle}>Signup</NavLink></div></div>:"" }
+    {user%2!==0 ? token==='' ? <div className='user_flow' onClick={userToggle}><div><NavLink to='/login'>Login</NavLink></div><div><NavLink to='/signup' onClick={userToggle}>Signup</NavLink></div></div> :    <div className='user_flow' onClick={userToggle}><button onClick={handleLogout}>Logout</button></div> :""}
    </div>
-   
+
     </div>
     
   <div className='nav_bot'>
@@ -53,6 +63,7 @@ function Routercompo() {
    <div><NavLink to='/footware'>Footware</NavLink></div>
    <div><NavLink to='/headphones'>HeadPhones</NavLink></div>
    
+   
   </div>
    
     
@@ -61,14 +72,15 @@ function Routercompo() {
 
     <Routes>
     
-        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/' element={<Home token={token}></Home>}></Route>
         {/* <Route path='/all' element={<All/>}/> */}
-        <Route path='/laptop' element={<Laptop/>}/>
-        <Route path='/mobile' element={<Mobile/>}/>
-        <Route path='/footware' element={<Footware/>} />
-        <Route path='/headphones' element={<Headphones/>} />
-        <Route path='/login' element={<Login/>} />
+        <Route path='/laptop' element={<Laptop token={token}/>}/>
+        <Route path='/mobile' element={<Mobile token={token}/>}/>
+        <Route path='/footware' element={<Footware token={token}/>} />
+        <Route path='/headphones' element={<Headphones token={token}/>} />
+        <Route path='/login' element={<  Login settoken={settoken}/>} />
         <Route path='/signup' element={<Signup/>} />
+       
         <Route path='/:product/:id' element={<SingleCart/>} />
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/sucess' element={<Sucess/>}/>
