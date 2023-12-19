@@ -56,7 +56,7 @@ console.log(totalAmount)
            </div>
 
             <div className='cart_middle'>
-            <p className='item_name'>{item.name.slice(0,50)}</p>
+            <p className='item_name'>{item.name.slice(0,25)}.</p>
             <p className='item_price'>Price: ₹{item.price}</p>
             <label onClick={()=>{dispatch(decreaseQuantity({id:item.id,price:Number(item.price)}))} }>-</label>
             <label className='item_price'>{item.quantity}</label>

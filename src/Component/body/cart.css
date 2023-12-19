@@ -115,7 +115,7 @@ justify-content: space-between;
     font-size: 1rem;
     border-color: rgb(0, 128, 75);
     color: red;
-    font-weight: 800;
+    font-weight: 500;
 
 
 }
@@ -187,7 +187,7 @@ justify-content: space-between;
     .cart_count {
         width: 1rem;
         height: 1rem;
-        font-size: 1rem;
+        font-size: .8rem;
     }
     .shopmore_button {
         /* margin-bottom: 8rem; */
