@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/cartSystem';
 import { NavLink } from 'react-router-dom';
+import FooterComp from '../footer/FooterComp';
 
 
 
@@ -38,6 +39,7 @@ console.log(filteredProducts);
   };
 
   return (
+   <>
     <div className='search_main'>
       <input
         type="text"
@@ -79,6 +81,8 @@ console.log(filteredProducts);
              })}
         </div>
     </div>
+    <FooterComp/>
+   </>
   );
 };
 

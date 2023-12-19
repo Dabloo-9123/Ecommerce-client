@@ -86,9 +86,10 @@ button{
     border: solid 1px black;
 }
 .search_main{
-    border: solid 5px teal;
+    /* border: solid 5px teal; */
     margin-top: 100px;
     text-align: center;
+    min-height: 100rem;
 }
 /* mediaquery for mobile */
 @media only screen and (max-width: 650px) and (min-width:250px) {
